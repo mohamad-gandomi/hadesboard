@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Arq report screen</title><desc id="desc">A conceptual operational report interface for Arq.</desc>
+  <rect width="1600" height="1000" fill="#171713"/><text x="100" y="105" font-family="monospace" font-size="17" fill="#98978f">ARQ / REPORT 08</text><text x="1500" y="105" text-anchor="end" font-family="monospace" font-size="17" fill="#3157d5">SYSTEM / ACTIVE</text>
+  <rect x="100" y="170" width="1400" height="730" fill="#20201c" stroke="#494944"/><path d="M100 285h1400M440 170v730" stroke="#494944"/>
+  <text x="155" y="235" font-family="Arial" font-size="28" fill="#f5f3ed">WORKFLOW STATUS</text><circle cx="1390" cy="228" r="8" fill="#3157d5"/>
+  <text x="155" y="380" font-family="monospace" font-size="14" fill="#85857e">CURRENT SIGNAL</text><text x="155" y="480" font-family="Arial" font-size="95" fill="#f5f3ed">72%</text><rect x="155" y="550" width="225" height="8" fill="#494944"/><rect x="155" y="550" width="165" height="8" fill="#3157d5"/>
+  <path d="M510 760l145-120 135 55 160-240 145 95 140-170 165 110" fill="none" stroke="#3157d5" stroke-width="7"/><path d="M510 400h850M510 520h850M510 640h850M510 760h850" stroke="#383833"/><text x="510" y="835" font-family="monospace" font-size="14" fill="#85857e">UPDATED / CONCEPT DATA ONLY</text>
+</svg>

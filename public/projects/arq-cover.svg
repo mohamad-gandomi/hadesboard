@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Arq concept application</title><desc id="desc">A calm cobalt operational dashboard concept.</desc>
+  <rect width="1600" height="1000" fill="#dfe3ef"/><rect x="90" y="65" width="1420" height="870" fill="#f5f3ed" stroke="#bbc1d2"/><rect x="90" y="65" width="260" height="870" fill="#1c1c18"/>
+  <text x="145" y="135" font-family="Arial" font-size="34" font-weight="600" fill="#f5f3ed">ARQ</text><text x="145" y="220" font-family="monospace" font-size="14" fill="#85857e">OVERVIEW</text><text x="145" y="275" font-family="monospace" font-size="14" fill="#85857e">WORKFLOWS</text><text x="145" y="330" font-family="monospace" font-size="14" fill="#85857e">REPORTS</text><rect x="140" y="190" width="6" height="40" fill="#3157d5"/>
+  <text x="420" y="145" font-family="Arial" font-size="54" fill="#1c1c18">Operational overview</text><text x="1435" y="140" text-anchor="end" font-family="monospace" font-size="14" fill="#68675f">CONCEPT / APP / 003</text>
+  <rect x="420" y="230" width="300" height="180" fill="#3157d5"/><text x="465" y="290" font-family="monospace" font-size="14" fill="#dfe3ef">ACTIVE STREAMS</text><text x="465" y="370" font-family="Arial" font-size="64" fill="#fff">24</text><rect x="750" y="230" width="300" height="180" fill="#eeece5"/><rect x="1080" y="230" width="355" height="180" fill="#eeece5"/>
+  <rect x="420" y="455" width="1015" height="370" fill="#fff" stroke="#d7d4ca"/><path d="M475 735l145-80 125 35 155-145 150 55 165-120 160 75" fill="none" stroke="#3157d5" stroke-width="7"/><path d="M475 540h870M475 620h870M475 700h870" stroke="#e5e2da"/>
+</svg>

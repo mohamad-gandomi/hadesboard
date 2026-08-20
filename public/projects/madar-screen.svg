@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Madar content system screen</title><desc id="desc">A conceptual structured content page for Madar.</desc>
+  <rect width="1600" height="1000" fill="#1c1c18"/><path d="M0 250h1600M0 500h1600M0 750h1600M400 0v1000M800 0v1000M1200 0v1000" stroke="#34342f"/>
+  <text x="100" y="110" font-family="monospace" font-size="18" fill="#9c9a91">MADAR / SYSTEM MAP</text><text x="1500" y="110" text-anchor="end" font-family="monospace" font-size="18" fill="#3157d5">SCREEN / 02</text>
+  <rect x="100" y="190" width="430" height="690" fill="#f5f3ed"/><text x="155" y="280" font-family="Arial" font-size="64" font-weight="600" fill="#1c1c18">01</text><rect x="155" y="350" width="285" height="17" fill="#d7d4ca"/><rect x="155" y="390" width="220" height="17" fill="#d7d4ca"/><rect x="155" y="660" width="90" height="90" fill="#3157d5"/>
+  <rect x="570" y="190" width="930" height="330" fill="#292924" stroke="#57564f"/><text x="630" y="300" font-family="Arial" font-size="52" fill="#f5f3ed">STRUCTURE BEFORE SURFACE</text><path d="M630 395h730" stroke="#57564f"/><circle cx="665" cy="445" r="9" fill="#3157d5"/><rect x="700" y="436" width="280" height="16" fill="#57564f"/>
+  <rect x="570" y="560" width="440" height="320" fill="#3157d5"/><rect x="1050" y="560" width="450" height="320" fill="#292924" stroke="#57564f"/><path d="M1110 640h320M1110 700h210M1110 760h275" stroke="#68675f" stroke-width="14"/>
+</svg>

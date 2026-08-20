@@ -1,0 +1,25 @@
+import type { Metadata } from "next";
+
+import { JournalArchive } from "@/components/journal/journal-archive";
+import { JournalHero } from "@/components/journal/journal-hero";
+import { Footer } from "@/components/layout/footer";
+import { Header } from "@/components/layout/header";
+import { articles } from "@/data/journal";
+
+export const metadata: Metadata = {
+  title: "مجله طراحی و توسعه وب",
+  description: "یادداشت‌های هادس بورد درباره طراحی تجربه کاربر، توسعه وب و تصمیم‌های پیش از ساخت یک محصول دیجیتال.",
+};
+
+export default function JournalPage() {
+  return (
+    <>
+      <Header />
+      <main id="top">
+        <JournalHero />
+        <JournalArchive articles={articles} />
+      </main>
+      <Footer />
+    </>
+  );
+}
