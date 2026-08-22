@@ -10,7 +10,7 @@ export const professionalWebsite = {
   readingTime: "۵ دقیقه",
   excerpt: "حرفه‌ای‌بودن فقط به ظاهر صیقلی مربوط نیست؛ از هدف و محتوا تا عملکرد و امکان نگهداری، یک سیستم منسجم لازم است.",
   coverImage: {
-    src: "/journal/professional-website-cover.png",
+    src: "/journal/professional-website-cover.webp",
     alt: "فضای کاری طراحی و توسعه با رابط وب و کد در نمایشگرها",
     width: 1586,
     height: 992,

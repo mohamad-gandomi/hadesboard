@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 
 import "./globals.css";
 
+import { ScrollToTop } from "@/components/layout/scroll-to-top";
 import { ravi } from "@/lib/fonts";
 import { siteConfig } from "@/lib/site";
 
@@ -23,7 +24,10 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html className={ravi.variable} dir="rtl" lang="fa">
-      <body>{children}</body>
+      <body>
+        <ScrollToTop />
+        {children}
+      </body>
     </html>
   );
 }

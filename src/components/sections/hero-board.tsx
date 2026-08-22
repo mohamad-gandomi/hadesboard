@@ -16,7 +16,7 @@ export function HeroBoard() {
           fill
           priority
           sizes="(max-width: 768px) 100vw, 34vw"
-          src="/images/home-hero-studio.png"
+          src="/images/home-hero-studio.webp"
         />
         <figcaption className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-ink/80 px-3 py-2 font-mono text-[8px] tracking-[0.12em] text-white" dir="ltr">
           <span>STUDIO / FRAME 01</span>

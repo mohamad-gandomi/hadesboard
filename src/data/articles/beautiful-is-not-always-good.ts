@@ -10,7 +10,7 @@ export const beautifulIsNotAlwaysGood = {
   readingTime: "۵ دقیقه",
   excerpt: "زیبایی می‌تواند توجه را جلب کند، اما کیفیت یک وب‌سایت به وضوح، کاربرد، محتوا و اجرای فنی آن وابسته است.",
   coverImage: {
-    src: "/journal/beauty-usability-cover.png",
+    src: "/journal/beauty-usability-cover.webp",
     alt: "بررسی رابط روی تبلت در کنار طرح‌های اولیه تجربه کاربر",
     width: 1586,
     height: 992,

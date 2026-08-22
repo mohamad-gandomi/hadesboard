@@ -12,7 +12,7 @@ export function BrandMark({ className = "", size = 36 }: BrandMarkProps) {
       aria-hidden="true"
       className={className}
       height={size}
-      src="/brand/hadesboard-mark-v1.png"
+      src="/brand/hadesboard-mark-v1.webp"
       width={size}
     />
   );

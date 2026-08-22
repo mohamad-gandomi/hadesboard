@@ -10,7 +10,7 @@ export const beforeWebDesign = {
   readingTime: "۶ دقیقه",
   excerpt: "برای شروع طراحی به پاسخ همه پرسش‌ها نیاز نیست، اما هدف، مخاطب، محتوا و محدودیت‌های اصلی باید تا حد کافی روشن باشند.",
   coverImage: {
-    src: "/journal/before-design-cover.png",
+    src: "/journal/before-design-cover.webp",
     alt: "چیدمان ساختار محتوا و نقشه سایت روی میز طراحی",
     width: 1586,
     height: 992,

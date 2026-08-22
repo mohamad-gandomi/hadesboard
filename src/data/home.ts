@@ -31,7 +31,7 @@ export const philosophyPoints = ["طراحی سنجیده", "استفاده آس
 export const featuredCaseStudy = {
   projectSlug: "madar",
   image: {
-    src: "/projects/madar-featured-case-study.png",
+    src: "/projects/madar-featured-case-study.webp",
     alt: "ترکیب صفحات وب‌سایت مفهومی مدار با عکاسی و جزئیات زیرساختی",
     width: 1448,
     height: 1086,

@@ -13,6 +13,7 @@ for command_name in zip unzip; do
 done
 
 cd "$project_root"
+npm run images:optimize
 npm run build
 
 (
