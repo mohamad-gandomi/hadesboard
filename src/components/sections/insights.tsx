@@ -17,7 +17,7 @@ export function Insights() {
         <div className="mt-14 grid sm:grid-cols-3 lg:mt-20">
           {articles.map((article) => <ArticlePreview article={article} key={article.id} />)}
         </div>
-        <div className="mt-8 flex justify-end">
+        <div className="mt-8 flex justify-start sm:justify-end" dir="rtl">
           <TextLink href="/journal">مشاهده همه یادداشت‌ها</TextLink>
         </div>
       </Container>

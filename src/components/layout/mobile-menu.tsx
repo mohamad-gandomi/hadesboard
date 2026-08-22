@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useId, useRef, useState } from "react";
 
 import { ArrowIcon } from "@/components/ui/arrow-icon";
+import { contactChannels } from "@/data/contact";
 import { siteConfig } from "@/lib/site";
 
 export function MobileMenu() {
@@ -55,15 +56,17 @@ export function MobileMenu() {
         aria-controls={menuId}
         aria-expanded={open}
         aria-label={open ? "بستن فهرست" : "باز کردن فهرست"}
-        className={`focus-ring relative z-50 flex h-11 min-w-28 items-center justify-between gap-3 border px-3 text-canvas transition-colors ${
-          open ? "border-accent bg-accent" : "border-ink bg-ink hover:bg-accent"
+        className={`focus-ring relative z-50 flex h-11 w-fit items-center justify-between gap-3 border px-3 text-canvas transition-colors ${
+          open
+            ? "border-accent bg-accent"
+            : "border-ink bg-ink hover:bg-accent"
         }`}
         onClick={() => setOpen((current) => !current)}
         ref={triggerRef}
         type="button"
       >
-        <span className="font-mono text-[9px] tracking-[0.12em]" dir="ltr" aria-hidden="true">
-          {open ? "CLOSE / ESC" : `MENU / ${String(siteConfig.navigation.length).padStart(2, "0")}`}
+        <span className="whitespace-nowrap font-mono text-[9px] tracking-[0.12em]" dir="ltr" aria-hidden="true">
+          {open ? "CLOSE / ESC" : "MENU"}
         </span>
         <span className="flex w-5 flex-col gap-1.5" aria-hidden="true">
           <span className={`h-px bg-current transition-transform ${open ? "translate-y-[3.5px] rotate-45" : ""}`} />
@@ -75,7 +78,7 @@ export function MobileMenu() {
         <div
           aria-label="فهرست اصلی"
           aria-modal="true"
-          className="grid-lines fixed inset-0 z-40 min-h-dvh overflow-y-auto bg-canvas px-5 pb-8 pt-28"
+          className="fixed inset-0 z-40 min-h-dvh overflow-y-auto bg-canvas px-5 pb-8 pt-28"
           id={menuId}
           ref={panelRef}
           role="dialog"
@@ -98,8 +101,8 @@ export function MobileMenu() {
               ))}
             </ul>
             <div>
-              <p className="mb-3 font-mono text-[9px] tracking-[0.12em] text-muted" dir="ltr">
-                NEXT / PROJECT INQUIRY
+              <p className="mb-3 font-sans text-[9px] tracking-[0.12em] text-muted" dir="rtl">
+                گام بعدی / درخواست پروژه
               </p>
               <Link
                 className="button-primary focus-ring flex min-h-12 items-center justify-between border px-5 text-sm font-medium transition-colors"
@@ -109,6 +112,23 @@ export function MobileMenu() {
                 <span>شروع پروژه</span>
                 <ArrowIcon className="size-4 rotate-180" />
               </Link>
+              <div className="mt-8 border-t border-line pt-5">
+                <p className="mb-4 text-xs font-medium text-body">ارتباط مستقیم</p>
+                <div className="grid grid-cols-2 gap-x-5 gap-y-3 text-xs text-muted">
+                  {contactChannels.map((channel) => (
+                    <a
+                      className="focus-ring transition-colors hover:text-ink"
+                      href={channel.href}
+                      key={channel.id}
+                      onClick={() => setOpen(false)}
+                      rel={channel.external ? "noopener noreferrer" : undefined}
+                      target={channel.external ? "_blank" : undefined}
+                    >
+                      {channel.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
           </nav>
         </div>

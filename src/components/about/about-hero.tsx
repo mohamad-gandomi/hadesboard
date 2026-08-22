@@ -22,7 +22,6 @@ export function AboutHero() {
             <p className="text-pretty text-lg leading-9 text-body">
               هادس بورد یک استودیوی فارسی طراحی و توسعه است؛ برای محصولاتی که باید هم زیبا باشند، هم درست کار کنند و هم به هدف واقعی کسب‌وکار نزدیک بمانند.
             </p>
-            <p className="mt-7 font-mono text-[9px] tracking-[.12em] text-muted" dir="ltr">PERSIAN / RTL / DIGITAL STUDIO</p>
           </div>
         </div>
       </Container>

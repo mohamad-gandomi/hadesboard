@@ -26,7 +26,7 @@ export function Footer() {
           </nav>
         </div>
         <Divider />
-        <div className="flex flex-col gap-4 pt-6 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col items-center gap-4 pt-6 text-center text-xs text-muted sm:flex-row sm:items-center sm:justify-between sm:text-right">
           <p>© هادس بورد — همه حقوق محفوظ است.</p>
           <Link className="focus-ring transition-colors hover:text-ink" href="#top">بازگشت به بالا ↑</Link>
         </div>

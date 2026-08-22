@@ -8,7 +8,7 @@ type StudioManifestoProps = {
 
 export function StudioManifesto({ principles }: StudioManifestoProps) {
   return (
-    <section className="grid-lines-dark overflow-hidden border-y border-ink bg-ink py-20 text-canvas sm:py-28 lg:py-36">
+    <section className="md:grid-lines-dark overflow-hidden border-y border-ink bg-ink py-20 text-canvas sm:py-28 lg:py-36">
       <Container>
         <SectionLabel index="01" tone="dark">دیدگاه استودیو</SectionLabel>
         <h2 className="type-section mt-9 max-w-5xl text-balance font-medium">

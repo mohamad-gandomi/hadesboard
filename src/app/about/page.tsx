@@ -34,8 +34,8 @@ export default function AboutPage() {
         <PersonalStudio principles={collaborationPrinciples} />
         <CtaSection
           action={{ label: "شرح پروژه", href: "/contact" }}
-          description="برای شروع، لازم نیست سند کاملی آماده باشد. یک توضیح کوتاه از هدف و وضعیت فعلی کافی است؛ فرم اولیه آماده است و ارسال پس از ثبت مسیر ارتباطی تأییدشده فعال می‌شود."
-          label="NEXT / START A CONVERSATION"
+          description="برای شروع، لازم نیست سند کاملی آماده باشد. یک توضیح کوتاه از هدف و وضعیت فعلی کافی است؛ از صفحه تماس مسیر ارتباطی مناسب خودتان را انتخاب کنید."
+          label="گام بعدی / شروع گفت‌وگو"
           title="اگر نگاه‌مان به ساخت محصول نزدیک است، از یک گفت‌وگو شروع کنیم."
         />
       </main>

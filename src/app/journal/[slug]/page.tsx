@@ -56,7 +56,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         <CtaSection
           action={{ label: "شرح پروژه", href: "/contact" }}
           description="اگر این پرسش‌ها به مسئله‌ای در محصول یا وب‌سایت شما نزدیک‌اند، می‌توانیم از یک توضیح کوتاه شروع کنیم."
-          label="NEXT / DISCUSS A PROJECT"
+          label="گام بعدی / گفت‌وگو درباره پروژه"
           title="یک تصمیم بهتر، معمولاً از یک پرسش روشن شروع می‌شود."
         />
       </main>

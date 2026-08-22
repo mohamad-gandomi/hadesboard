@@ -10,7 +10,6 @@ import { Process } from "@/components/sections/process";
 import { SelectedProjects } from "@/components/sections/selected-projects";
 import { Services } from "@/components/sections/services";
 import { TechnologyStrip } from "@/components/sections/technology-strip";
-import { Testimonial } from "@/components/sections/testimonial";
 import { WhyHadesBoard } from "@/components/sections/why-hadesboard";
 
 export default function Home() {
@@ -26,7 +25,6 @@ export default function Home() {
         <Process />
         <FeaturedCaseStudy />
         <WhyHadesBoard />
-        <Testimonial />
         <TechnologyStrip />
         <Insights />
         <FinalCta />

@@ -1,31 +1,75 @@
+"use client";
+
+import { type FormEvent, useState } from "react";
+
+import { ContactInformation } from "@/components/contact/contact-information";
 import { FormField } from "@/components/contact/form-field";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
+import type { ContactChannel } from "@/data/contact";
 import type { Service } from "@/data/services";
 
 type ProjectInquiryFormProps = {
+  channels: readonly ContactChannel[];
   services: readonly Service[];
 };
 
 const controlClassName = "focus-ring min-h-12 w-full rounded-none border border-line bg-canvas px-4 py-3 text-base text-ink outline-none transition-colors placeholder:text-muted/75 hover:border-body focus:border-accent";
 
-export function ProjectInquiryForm({ services }: ProjectInquiryFormProps) {
+export function ProjectInquiryForm({ channels, services }: ProjectInquiryFormProps) {
+  const [submission, setSubmission] = useState<{
+    status: "idle" | "submitting" | "success" | "error";
+    message: string;
+  }>({
+    status: "idle",
+    message: "اطلاعات فرم مستقیماً به ایمیل هادس بورد ارسال می‌شود.",
+  });
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    setSubmission({ status: "submitting", message: "در حال ارسال درخواست…" });
+
+    try {
+      const response = await fetch("/send-contact.php", {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+      const result = (await response.json()) as { success?: boolean; message?: string };
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "ارسال انجام نشد. لطفاً دوباره تلاش کنید.");
+      }
+
+      form.reset();
+      setSubmission({ status: "success", message: result.message || "درخواست شما با موفقیت ارسال شد." });
+    } catch (error) {
+      setSubmission({
+        status: "error",
+        message: error instanceof Error ? error.message : "ارسال انجام نشد. دوباره تلاش کنید یا مستقیماً پیام بدهید.",
+      });
+    }
+  };
+
   return (
     <section className="border-y border-line bg-surface/45 py-20 sm:py-28" id="inquiry">
       <Container className="grid gap-14 lg:grid-cols-[.65fr_1.35fr] lg:gap-20">
         <div>
           <SectionHeading
-            description="چند خط برای شناخت اولیه کافی است. جزئیات دامنه و مسیر همکاری بعداً و در گفت‌وگو روشن می‌شوند."
+            description="چند خط درباره پروژه بنویسید یا از راه‌های زیر مستقیماً پیام بدهید."
             eyebrow="درخواست پروژه"
             index="01"
-            title="از چیزی که الان می‌دانید شروع کنید."
+            title="از یک گفت‌وگوی کوتاه شروع کنیم."
           />
-          <p className="mt-8 border-r-2 border-accent pr-4 text-sm leading-7 text-body" id="form-availability">
-            این فرم فعلاً فقط ساختار رابط است و اطلاعاتی ارسال یا ذخیره نمی‌شود. دکمه ارسال پس از اتصال یک مسیر ارتباطی تأییدشده فعال خواهد شد.
-          </p>
+          <ContactInformation channels={channels} />
         </div>
 
-        <form aria-describedby="form-availability" aria-label="فرم درخواست پروژه" className="border-t border-line pt-8">
+        <form aria-label="فرم درخواست پروژه" className="border-t border-line pt-8" onSubmit={handleSubmit}>
+          <div aria-hidden="true" className="absolute -left-[10000px] size-px overflow-hidden">
+            <label htmlFor="website">وب‌سایت</label>
+            <input autoComplete="off" id="website" name="website" tabIndex={-1} type="text" />
+          </div>
           <fieldset>
             <legend className="sr-only">اطلاعات اولیه پروژه</legend>
             <div className="grid gap-8 sm:grid-cols-2">
@@ -44,10 +88,10 @@ export function ProjectInquiryForm({ services }: ProjectInquiryFormProps) {
               </div>
 
               <FormField id="project-type" label="نوع پروژه">
-                <select className={controlClassName} defaultValue="" id="project-type" name="projectType">
-                  <option value="">انتخاب کنید</option>
-                  {services.map((service) => <option key={service.slug} value={service.slug}>{service.title}</option>)}
-                  <option value="other">سایر</option>
+                <select className={`${controlClassName} ravi-select font-sans`} defaultValue="" id="project-type" name="projectType">
+                  <option className="font-sans" value="">انتخاب کنید</option>
+                  {services.map((service) => <option className="font-sans" key={service.slug} value={service.slug}>{service.title}</option>)}
+                  <option className="font-sans" value="other">سایر</option>
                 </select>
               </FormField>
 
@@ -64,9 +108,15 @@ export function ProjectInquiryForm({ services }: ProjectInquiryFormProps) {
           </fieldset>
 
           <div className="mt-10 flex flex-col gap-4 border-t border-line pt-7 sm:flex-row sm:items-center sm:justify-between">
-            <p className="max-w-md text-xs leading-6 text-muted">با فعال‌شدن ارسال، وضعیت موفق یا خطا در همین بخش نمایش داده خواهد شد.</p>
-            <button className="min-h-12 cursor-not-allowed border border-line bg-surface px-6 text-sm font-medium text-muted" disabled type="submit">
-              ارسال — به‌زودی
+            <p
+              aria-live="polite"
+              className={`max-w-md text-xs leading-6 ${submission.status === "error" ? "text-red-700" : submission.status === "success" ? "text-accent" : "text-muted"}`}
+              role="status"
+            >
+              {submission.message}
+            </p>
+            <button className="button-primary focus-ring min-h-12 border px-6 text-sm font-medium disabled:cursor-wait disabled:opacity-70" disabled={submission.status === "submitting"} type="submit">
+              {submission.status === "submitting" ? "در حال ارسال…" : "ارسال درخواست"}
             </button>
           </div>
         </form>

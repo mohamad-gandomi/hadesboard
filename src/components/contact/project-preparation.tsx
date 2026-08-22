@@ -13,7 +13,7 @@ export function ProjectPreparation({ items }: ProjectPreparationProps) {
         <SectionHeading
           description="این موارد الزام نیستند؛ فقط کمک می‌کنند گفت‌وگوی اول سریع‌تر به اصل مسئله برسد."
           eyebrow="پیش از شروع"
-          index="03"
+          index="02"
           title="چه اطلاعاتی به شناخت پروژه کمک می‌کند؟"
         />
 

@@ -2,7 +2,8 @@ export type ContactChannel = {
   id: string;
   label: string;
   value: string;
-  status: "pending";
+  href: string;
+  external?: boolean;
 };
 
 export type PreparationItem = {
@@ -12,9 +13,11 @@ export type PreparationItem = {
 };
 
 export const contactChannels = [
-  { id: "01", label: "ایمیل", value: "در انتظار ثبت نشانی تأییدشده", status: "pending" },
-  { id: "02", label: "شبکه‌های اجتماعی", value: "در انتظار ثبت پیوندهای تأییدشده", status: "pending" },
-  { id: "03", label: "راه ارتباطی دیگر", value: "هنوز تعریف نشده است", status: "pending" },
+  { id: "01", label: "تلفن", value: "09355396804", href: "tel:+989355396804", external: false },
+  { id: "02", label: "ایمیل", value: "info@hadesboard.com", href: "mailto:info@hadesboard.com", external: false },
+  { id: "03", label: "واتساپ", value: "09355396804", href: "https://wa.me/989355396804", external: true },
+  { id: "04", label: "تلگرام", value: "09355396804", href: "https://t.me/+989355396804", external: true },
+  { id: "05", label: "لینکدین", value: "Mohamad Gandomi", href: "https://www.linkedin.com/in/mohamad-gandomi-a7364085/", external: true },
 ] as const satisfies readonly ContactChannel[];
 
 export const preparationItems = [

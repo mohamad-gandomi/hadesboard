@@ -84,7 +84,7 @@ Future:
 -   [x] Write service descriptions
 -   [x] Write philosophy copy
 -   [x] Create 3 initial articles
--   [ ] Add contact information
+-   [x] Add contact information
 
 ------------------------------------------------------------------------
 

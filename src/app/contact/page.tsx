@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 
 import { ContactHero } from "@/components/contact/contact-hero";
-import { ContactInformation } from "@/components/contact/contact-information";
 import { ProjectInquiryForm } from "@/components/contact/project-inquiry-form";
 import { ProjectPreparation } from "@/components/contact/project-preparation";
 import { CtaSection } from "@/components/content/cta-section";
@@ -21,13 +20,12 @@ export default function ContactPage() {
       <Header />
       <main id="top">
         <ContactHero />
-        <ProjectInquiryForm services={services} />
-        <ContactInformation channels={contactChannels} />
+        <ProjectInquiryForm channels={contactChannels} services={services} />
         <ProjectPreparation items={preparationItems} />
         <CtaSection
           action={{ label: "بازگشت به فرم", href: "#inquiry" }}
           description="همین اطلاعات اولیه برای شروع شناخت کافی است. لازم نیست پاسخ همه پرسش‌ها یا دامنه نهایی پروژه از قبل آماده باشد."
-          label="NEXT / PREPARE THE BRIEF"
+          label="گام بعدی / آماده‌سازی شرح پروژه"
           title="هدف را کوتاه بنویسید؛ جزئیات را با هم روشن می‌کنیم."
         />
       </main>

@@ -62,6 +62,11 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+.ravi-select,
+.ravi-select option {
+  font-family: var(--font-ravi), Tahoma, Arial, sans-serif;
+}
+
 .shell {
   width: min(100%, var(--shell));
   margin-inline: auto;

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { TextLink } from "@/components/ui/text-link";
 import type { Article } from "@/data/journal";
@@ -13,15 +14,21 @@ export function ArticlePreview({ article }: ArticlePreviewProps) {
         <span className="font-mono text-[10px]" dir="ltr">ARTICLE / {article.id}</span>
       </div>
       {article.coverImage ? (
-        <figure className="relative mt-6 aspect-[16/10] overflow-hidden border border-line bg-surface">
-          <Image
-            alt={article.coverImage.alt}
-            className="object-cover transition-transform duration-500 motion-reduce:transition-none group-hover:scale-[1.015]"
-            fill
-            sizes="(max-width: 640px) 100vw, 33vw"
-            src={article.coverImage.src}
-          />
-        </figure>
+        <Link
+          aria-label={`مطالعه مقاله: ${article.title}`}
+          className="focus-ring group/image mt-6 block"
+          href={`/journal/${article.slug}`}
+        >
+          <figure className="relative aspect-[16/10] overflow-hidden border border-line bg-surface">
+            <Image
+              alt={article.coverImage.alt}
+              className="transform-gpu object-cover transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform motion-reduce:transition-none group-hover/image:scale-[1.015]"
+              fill
+              sizes="(max-width: 640px) 100vw, 33vw"
+              src={article.coverImage.src}
+            />
+          </figure>
+        </Link>
       ) : null}
       <p className="mt-6 flex flex-wrap gap-x-3 gap-y-1 text-xs text-muted">
         <time dateTime={article.dateTime}>{article.date}</time>

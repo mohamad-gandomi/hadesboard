@@ -5,9 +5,9 @@ import { HeroBoard } from "@/components/sections/hero-board";
 
 export function Hero() {
   return (
-    <section className="grid-lines border-b border-line">
+    <section className="border-b border-line">
       <Container className="grid items-stretch md:min-h-[calc(100svh-5rem)] md:grid-cols-[minmax(0,1.32fr)_minmax(18rem,.68fr)] lg:min-h-[calc(100svh-6rem)]">
-        <div className="flex flex-col justify-center py-16 md:pl-14 lg:py-24 lg:pl-20">
+        <div className="grid-lines flex flex-col justify-center py-16 md:pl-14 lg:py-24 lg:pl-20">
           <div className="mb-9 flex items-center gap-3 text-xs text-body">
             <span className="size-1.5 bg-accent" />
             <span>استودیوی طراحی و توسعه وب</span>
