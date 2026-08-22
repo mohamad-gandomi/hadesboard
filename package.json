@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build --webpack",
+    "package:cpanel": "bash scripts/package-cpanel.sh",
     "start": "next start",
     "lint": "eslint ."
   },
