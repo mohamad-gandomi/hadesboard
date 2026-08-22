@@ -1,5 +1,3 @@
-import type { Metadata } from "next";
-
 import { CtaSection } from "@/components/content/cta-section";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
@@ -11,11 +9,13 @@ import { ServiceOverview } from "@/components/services/service-overview";
 import { ServicesHero } from "@/components/services/services-hero";
 import { projects } from "@/data/projects";
 import { serviceFaqs, services } from "@/data/services";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "خدمات طراحی و توسعه وب",
   description: "خدمات هادس بورد در طراحی وب، توسعه وب، وب‌اپلیکیشن و فروشگاه اینترنتی؛ با دامنه روشن و فرآیند قابل بررسی.",
-};
+  path: "/services",
+});
 
 export default function ServicesPage() {
   return (

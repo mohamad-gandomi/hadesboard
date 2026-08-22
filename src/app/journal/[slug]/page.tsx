@@ -8,6 +8,7 @@ import { RelatedArticles } from "@/components/journal/related-articles";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { articles, getArticleBySlug, getRelatedArticles } from "@/data/journal";
+import { createPageMetadata } from "@/lib/metadata";
 
 type ArticlePageProps = {
   params: Promise<{ slug: string }>;
@@ -23,17 +24,13 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
 
   if (!article) return { title: "یادداشت پیدا نشد" };
 
-  return {
+  return createPageMetadata({
     title: article.title,
     description: article.excerpt,
-    authors: [{ name: "HadesBoard" }],
-    openGraph: {
-      type: "article",
-      title: article.title,
-      description: article.excerpt,
-      publishedTime: article.dateTime,
-    },
-  };
+    path: `/journal/${article.slug}`,
+    type: "article",
+    publishedTime: article.dateTime,
+  });
 }
 
 export default async function ArticlePage({ params }: ArticlePageProps) {

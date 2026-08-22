@@ -1,5 +1,3 @@
-import type { Metadata } from "next";
-
 import { ContactHero } from "@/components/contact/contact-hero";
 import { ProjectInquiryForm } from "@/components/contact/project-inquiry-form";
 import { ProjectPreparation } from "@/components/contact/project-preparation";
@@ -8,11 +6,13 @@ import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { contactChannels, preparationItems } from "@/data/contact";
 import { services } from "@/data/services";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "شروع پروژه",
   description: "فرم اولیه درخواست پروژه هادس بورد برای طراحی وب، توسعه وب، وب‌اپلیکیشن و فروشگاه اینترنتی.",
-};
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

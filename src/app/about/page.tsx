@@ -1,5 +1,3 @@
-import type { Metadata } from "next";
-
 import { AboutCapabilities } from "@/components/about/about-capabilities";
 import { AboutHero } from "@/components/about/about-hero";
 import { PersonalStudio } from "@/components/about/personal-studio";
@@ -11,11 +9,13 @@ import { Header } from "@/components/layout/header";
 import { Process } from "@/components/sections/process";
 import { aboutPrinciples, backgroundFields, collaborationPrinciples } from "@/data/about";
 import { services } from "@/data/services";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "درباره هادس بورد",
   description: "درباره هادس بورد؛ استودیوی فارسی طراحی و توسعه وب با تمرکز بر تجربه مفید، کیفیت فنی و درک هدف کسب‌وکار.",
-};
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (

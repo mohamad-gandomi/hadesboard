@@ -9,6 +9,7 @@ import { ProjectHero } from "@/components/projects/project-hero";
 import { ProjectNext } from "@/components/projects/project-next";
 import { ProjectOverview } from "@/components/projects/project-overview";
 import { getNextProject, getProjectBySlug, projects } from "@/data/projects";
+import { createPageMetadata } from "@/lib/metadata";
 
 type ProjectPageProps = {
   params: Promise<{ slug: string }>;
@@ -24,10 +25,11 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
 
   if (!project) return { title: "پروژه پیدا نشد" };
 
-  return {
+  return createPageMetadata({
     title: `${project.title} — پروژه مفهومی`,
     description: project.description,
-  };
+    path: `/projects/${project.slug}`,
+  });
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {

@@ -1,0 +1,6 @@
+User-Agent: *
+Allow: /
+Disallow: /send-contact.php
+
+Sitemap: https://hadesboard.com/sitemap.xml
+Host: https://hadesboard.com

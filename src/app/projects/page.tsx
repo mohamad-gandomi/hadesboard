@@ -1,15 +1,15 @@
-import type { Metadata } from "next";
-
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { ProjectArchive } from "@/components/projects/project-archive";
 import { Container } from "@/components/ui/container";
 import { SectionLabel } from "@/components/ui/section-label";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "نمونه‌کارها",
   description: "مجموعه پروژه‌ها و مطالعات مفهومی هادس بورد در طراحی وب، فروشگاه اینترنتی و وب‌اپلیکیشن.",
-};
+  path: "/projects",
+});
 
 export default function ProjectsPage() {
   return (
